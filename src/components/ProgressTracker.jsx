@@ -94,7 +94,7 @@ export default function ProgressTracker({
           className="progress-tracker-reset"
           onClick={resetProgress}
         >
-          Start over
+          Reset progress
         </button>
       </div>
 

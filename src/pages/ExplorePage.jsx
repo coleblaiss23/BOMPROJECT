@@ -21,10 +21,8 @@ export default function ExplorePage() {
       ? pillarParam
       : "";
 
-  const { filteredProphets, pillars, loading, verses } = useScriptureData(
-    searchTerm,
-    activePillar,
-  );
+  const { filteredProphets, pillars, loading: scripturesLoading, verses } =
+    useScriptureData(searchTerm, activePillar);
 
   useEffect(() => {
     document.title = "Explore | Doctrine of Christ Explorer";
@@ -43,7 +41,7 @@ export default function ExplorePage() {
     setSearchParams({});
   }
 
-  const showEmpty = !loading && filteredProphets.length === 0;
+  const showEmpty = filteredProphets.length === 0;
   const total = filteredProphets.length;
 
   return (
@@ -86,12 +84,10 @@ export default function ExplorePage() {
             />
           </div>
         </div>
-        {!loading ? (
-          <p className="explore-count">
-            <strong>{total}</strong>
-            {total === 1 ? " result" : " results"}
-          </p>
-        ) : null}
+        <p className="explore-count">
+          <strong>{total}</strong>
+          {total === 1 ? " result" : " results"}
+        </p>
       </div>
 
       <div>
@@ -118,11 +114,13 @@ export default function ExplorePage() {
         </div>
       </div>
 
-      {loading ? (
-        <div className="explore-loading-page">
-          <p className="explore-loading-text">Loading scriptures…</p>
-        </div>
-      ) : showEmpty ? (
+      {scripturesLoading ? (
+        <p className="explore-scriptures-loading" role="status">
+          Loading scripture index…
+        </p>
+      ) : null}
+
+      {showEmpty ? (
         <div className="explore-empty">
           <p>No results match your filters.</p>
           <button type="button" onClick={clearFilters} className="btn-secondary">

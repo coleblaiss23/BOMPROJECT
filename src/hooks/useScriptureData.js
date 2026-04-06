@@ -9,7 +9,7 @@ export function useScriptureData(searchTerm = "", activePillar = "") {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Papa.parse(import.meta.env.BASE_URL + 'data/lds-scriptures.csv', {
+    Papa.parse(import.meta.env.BASE_URL + "data/lds-scriptures.csv", {
       download: true,
       header: true,
       complete: (results) => {
@@ -19,6 +19,9 @@ export function useScriptureData(searchTerm = "", activePillar = "") {
           (row) => row.volume_title === "Book of Mormon",
         );
         setVerses(bom);
+        setLoading(false);
+      },
+      error: () => {
         setLoading(false);
       },
     });

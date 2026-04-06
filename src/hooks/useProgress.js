@@ -75,7 +75,13 @@ export function useProgress() {
 
   const resetProgress = useCallback(() => {
     const cleared = emptyProgress();
-    saveToStorage(cleared);
+    if (typeof window !== "undefined") {
+      try {
+        window.localStorage.removeItem(STORAGE_KEY);
+      } catch {
+        void 0;
+      }
+    }
     setProgress(cleared);
   }, []);
 

@@ -12,7 +12,18 @@ export default function App() {
     <div className="app-shell">
       <header className="app-header">
         <div className="app-header-inner">
-          <h1 className="app-title">Doctrine of Christ Explorer</h1>
+          <div className="app-title-block">
+            <h1 className="app-title">Doctrine of Christ Explorer</h1>
+            <p className="app-title-url">
+              <a
+                href="https://coleblaiss23.github.io/BOMPROJECT/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://coleblaiss23.github.io/BOMPROJECT/
+              </a>
+            </p>
+          </div>
           <nav className="app-nav" aria-label="Main navigation">
             <NavLink to="/" end className={navLinkClass}>
               Explore Prophets
