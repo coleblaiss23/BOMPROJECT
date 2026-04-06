@@ -24,7 +24,8 @@ jobs:
           node-version: "20"
           cache: npm
       - run: npm ci
-      - run: npm run build
+      - run: echo "VITE_BASE_URL=/BOMPROJECT/" >> $GITHUB_ENV
+      - run: npm run build -- --base /BOMPROJECT/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
