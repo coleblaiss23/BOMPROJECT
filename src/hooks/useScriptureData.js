@@ -9,7 +9,7 @@ export function useScriptureData(searchTerm = "", activePillar = "") {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Papa.parse("/data/lds-scriptures.csv", {
+    Papa.parse(`${import.meta.env.BASE_URL}data/lds-scriptures.csv`, {
       download: true,
       header: true,
       complete: (results) => {
