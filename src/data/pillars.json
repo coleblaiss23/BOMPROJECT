@@ -1,0 +1,42 @@
+[
+  {
+    "id": "faith",
+    "label": "Faith",
+    "color": "#4F86C6",
+    "icon": "anchor",
+    "description": "Trusting Christ enough to actually act — not just agree in your head.",
+    "primary_reference": "2 Nephi 31:19"
+  },
+  {
+    "id": "repentance",
+    "label": "Repentance",
+    "color": "#E07B54",
+    "icon": "refresh-cw",
+    "description": "Turning back to God and away from stuff you know is wrong, through Christ.",
+    "primary_reference": "Alma 34:31"
+  },
+  {
+    "id": "baptism",
+    "label": "Baptism",
+    "color": "#5AAFA0",
+    "icon": "droplet",
+    "description": "Going under the water as a real promise to God — the way you enter the covenant path.",
+    "primary_reference": "Mosiah 18:10"
+  },
+  {
+    "id": "holy_ghost",
+    "label": "Gift of the Holy Ghost",
+    "color": "#9B6DB5",
+    "icon": "wind",
+    "description": "What you get after baptism — help to change, guidance, and a clearer sense of what's true.",
+    "primary_reference": "Moroni 10:5"
+  },
+  {
+    "id": "enduring",
+    "label": "Enduring to the End",
+    "color": "#C9A84C",
+    "icon": "shield",
+    "description": "Not bailing on the covenant path when life gets long and messy.",
+    "primary_reference": "2 Nephi 31:20"
+  }
+]
